@@ -7,13 +7,19 @@
 - Metasploitable 2
 - VM Kali + VM Metasploitable 2
 
-## Simulados: força bruta em FTP, automação de tentativas em formulário web (Metasploitable 2) e password spraying em SMB com enumeração de usuários.
+# Simulados:
 
-## Aplicativos: 
+## Força bruta em FTP: 
 
-- FTP
-- SMB
+### WordLists
 
+- users.txt
+- passwords.txt
+
+## Automação de tentativas em formulário web (DVWA) 
+
+## Password spraying em SMB com enumeração de usuários
+ 
 Acesso root: sudo su
 Iniciando o setoolkit: setoolkit
 Tipo de ataque: Social-Engineering Attacks
@@ -23,9 +29,17 @@ Método de ataque: Site Cloner
 Obtendo o endereço da máquina: ifconfig
 URL para clone: http://www.facebook.com
 
-## WordLists
 
-- users.txt
-- passwords.txt
+
+## Comandos utilizados
+
+
+## Validação de acessos 
+
+
+## Recomendações de mitigação
+
 
 ## Resutados
+
+
