@@ -15,9 +15,29 @@
 
 - users.txt
 - passwords.txt
+──(kali@kali)-[~]
+└─$ echo -e "user \\nmsfadmin\nadmin\nroot" > users.txt
 
+┌──(kali@kali)-[~]
+└─$ echo -e "123456 \\npassword\nqewrty\nmsfadmin" > pass.txt
+
+┌──(kali@kali)-[~]
+└─$ cat pass.txt
+123456
+password
+qewrty
+msfadmin
+
+┌──(kali@kali)-[~]
+└─$ echo -e "user \nadmin\nmsfadmin\nroot" > users.txt
+
+┌──(kali@kali)-[~]
+└─$ cat users.txt
+user
+admin
+msfadmin
+root
   
-  <img width="528" height="364" alt="Captura de tela de 2026-11-06 14-55-52" src="https://github.com/user-attachments/assets/3f787c1d-2fd0-4ab5-9eaf-bf450263e836" />
 
 ```
 echo-e 'user\nmsfadmin\admin\nroot' > users.txt 
