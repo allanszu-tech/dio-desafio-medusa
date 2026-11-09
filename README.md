@@ -13,6 +13,7 @@
 
 ### WordLists
 
+```
 - users.txt
 - passwords.txt
 ──(kali@kali)-[~]
@@ -37,7 +38,7 @@ user
 admin
 msfadmin
 root
-  
+``` 
 
 ```
 echo-e 'user\nmsfadmin\admin\nroot' > users.txt 
