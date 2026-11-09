@@ -56,6 +56,7 @@ https://192.168.56.10/dvwa/login.php
 
 <img width="1721" height="874" alt="Captura de tela de 2026-11-06 14-37-32" src="https://github.com/user-attachments/assets/1d54dda2-5135-40f0-b507-e4cc1819725d" />
 
+<img width="1163" height="878" alt="Captura de tela de 2026-11-06 15-47-54" src="https://github.com/user-attachments/assets/b5b6cb70-6dc1-4e41-9bb2-f0292bdbc8d7" />
 
 ## Password spraying em SMB com enumeração de usuários
 
