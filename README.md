@@ -66,7 +66,6 @@ enum4linux -a 192.168.56.102 | tee enum_output.txt
 
 <img width="1345" height="945" alt="Captura de tela de 2026-11-06 16-46-21" src="https://github.com/user-attachments/assets/8347f748-8b88-497b-a22a-e3aa22b9f2e9" />
 
-<img width="528" height="364" alt="Captura de tela de 2026-11-06 14-55-52" src="https://github.com/user-attachments/assets/e801f739-2d6c-4542-82f8-2a165fc6d4e0" />
 
 
 ```
