@@ -13,9 +13,10 @@
 
 ### WordLists
 
-```
 - users.txt
 - passwords.txt
+
+```
 ──(kali@kali)-[~]
 └─$ echo -e "user \\nmsfadmin\nadmin\nroot" > users.txt
 
