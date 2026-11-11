@@ -182,6 +182,9 @@ Resultado verificado ao utilizar o login e a senha encontrada:
 
 ## Password spraying em SMB com enumeração de usuários
 
+Descobrindo usuários nos sistema:
+
+Usando o comando enum4linux:
 
 ```
 enum4linux -a 192.168.56.102 | tee enum_output.txt
@@ -262,19 +265,18 @@ Reconnecting with SMB1 for workgroup listing.
 ┌──(kali@kali)-[~]
 └─$ 
 ```
-## Conclusão
-
-O uso de senhas fracas, conhecidas, deixam seus sistemas vulneráveis.
 
 
 ## Recomendações de mitigação
 
-- Autenticação por multiplos fatores, pelo menos em 2 etapas(2MFA); \
-- Senhas fortes, como simbolos, sem palavras de dicionário e com datas de expiração de senha; \
-- Bloqueio de IPs, após identicafação de várias tentativas de login; \
-- Segregação de rede; \
+- Autenticação por multiplos fatores, pelo menos em 2 etapas(2MFA); 
+- Senhas fortes, como simbolos, sem palavras de dicionário e com datas de expiração de senha; 
+- Bloqueio de IPs, após identicafação de várias tentativas de login; 
+- Segregação de rede; 
 - Realizar auditorias regulares, usando ferramentas como medusa e outros métodos para fins de testes.
 
+## Conclusão
 
+O uso de senhas fracas, conhecidas, ou prováveis deixam seus sistemas vulneráveis.
 
 
