@@ -92,7 +92,8 @@ Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.n
 
 Validação do acesso FTP com login e senha encontraodo com "SUCCESS"
 
-                                                                                                                                                                         ```                                                                 
+                                                                                                                                                                         ```  
+                                                                                                                                                                         
 ┌──(kali@kali)-[~]\
 └─$ ftp 192.168.56.102\
 Connected to 192.168.56.102.\
@@ -105,6 +106,7 @@ Remote system type is UNIX.\
 Using binary mode to transfer files.\
 ftp> 
 ```
+
 
 ## Automação de tentativas em formulário web (DVWA) 
 
