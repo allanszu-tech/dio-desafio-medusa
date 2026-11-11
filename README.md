@@ -11,7 +11,23 @@
 
 ## Força bruta em FTP: 
 
-### WordLists
+```
+                                                                                                                                                                                                                                         
+┌──(kali㉿kali)-[~]
+└─$ ftp 192.168.56.102
+Connected to 192.168.56.102.
+220 (vsFTPd 2.3.4)
+Name (192.168.56.102:kali): 
+331 Please specify the password.
+Password: 
+530 Login incorrect.
+ftp: Login failed
+ftp> 
+```
+ 
+
+
+Criando wordlists e uma lista de senhas:
 
 - users.txt
 - passwords.txt
@@ -43,9 +59,6 @@ msfadmin
 root
 ``` 
 
-```
-echo-e 'user\nmsfadmin\admin\nroot' > users.txt 
-```
 
 Comando
 
@@ -136,7 +149,7 @@ WARNING: Invalid method: FAIL=Login failed.
 2026-11-10 11:58:32 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: user  Password: password [SUCCESS]
 ```
 
-Resultado verficado ao butilizar senha encontrada:
+Resultado verificado ao utilizar o login e a senha encontrada:
 
 <img width="1163" height="878" alt="Captura de tela de 2026-11-06 15-47-54" src="https://github.com/user-attachments/assets/b5b6cb70-6dc1-4e41-9bb2-f0292bdbc8d7" />
 
