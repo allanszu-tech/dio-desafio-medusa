@@ -240,6 +240,8 @@ Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.n
 
 Para validação do acesso encontrado, executamos:
 
+``` smbclient -L //192.168.56.102 -U msfadmin```
+
 ```
 (kali@kali)-[~]
 └─$  smbclient -L //192.168.56.102 -U msfadmin
