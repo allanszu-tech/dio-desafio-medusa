@@ -189,6 +189,7 @@ Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.n
 └─$ 
 ```
 
+Para fina de confimação de acesso encontrado, executamos:
 
 ```
 (kali㉿kali)-[~]
@@ -224,6 +225,12 @@ Reconnecting with SMB1 for workgroup listing.
 
 
 ## Recomendações de mitigação
+
+Autenticação por multiplos fatores, pelo menos em 2 etapas(2MFA);
+Senhas fortes, como simbolos, sem palavras de dicionário e com datas de expiração de senha;
+Bloqueio de IPs, após identicafação de várias tentativas de login;
+Segregação de rede;
+Realizar auditorias regulares, usando ferramentas como medusa e outros métodos para fins de testes.
 
 
 ## Resutados
