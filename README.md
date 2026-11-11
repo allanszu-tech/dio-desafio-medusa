@@ -79,7 +79,9 @@ Medusa v2.3 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.n
 
 https://192.168.56.10/dvwa/login.php
 
+<img width="1721" height="874" alt="Captura de tela de 2026-11-06 14-37-32" src="https://github.com/user-attachments/assets/1d54dda2-5135-40f0-b507-e4cc1819725d" />
 
+\
 ```
 medusa -h  192.168.56.102 -U users.txt -P pass.txt -M http \
 -m PAGE: '/dvwa/login.php' \
@@ -135,9 +137,6 @@ WARNING: Invalid method: FAIL=Login failed.
 ```
 
 
-<img width="1343" height="919" alt="Captura de tela de 2026-11-06 15-31-59" src="https://github.com/user-attachments/assets/a21416c3-b35b-4e05-b49d-b3d522cef97a" />
-
-<img width="1721" height="874" alt="Captura de tela de 2026-11-06 14-37-32" src="https://github.com/user-attachments/assets/1d54dda2-5135-40f0-b507-e4cc1819725d" />
 
 <img width="1163" height="878" alt="Captura de tela de 2026-11-06 15-47-54" src="https://github.com/user-attachments/assets/b5b6cb70-6dc1-4e41-9bb2-f0292bdbc8d7" />
 
