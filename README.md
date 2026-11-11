@@ -226,10 +226,10 @@ Reconnecting with SMB1 for workgroup listing.
 
 ## Recomendações de mitigação
 
-Autenticação por multiplos fatores, pelo menos em 2 etapas(2MFA);
-Senhas fortes, como simbolos, sem palavras de dicionário e com datas de expiração de senha;
-Bloqueio de IPs, após identicafação de várias tentativas de login;
-Segregação de rede;
+Autenticação por multiplos fatores, pelo menos em 2 etapas(2MFA);&nbsp;
+Senhas fortes, como simbolos, sem palavras de dicionário e com datas de expiração de senha;&nbsp;
+Bloqueio de IPs, após identicafação de várias tentativas de login;;&nbsp;
+Segregação de rede;;&nbsp;
 Realizar auditorias regulares, usando ferramentas como medusa e outros métodos para fins de testes.
 
 
